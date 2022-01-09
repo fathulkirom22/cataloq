@@ -24,12 +24,10 @@
 export default {
   name: 'DetailPage',
   data: () => ({
-    product: null,
-    recommendations: []
+    product: null
   }),
   async fetch() {
     this.product = await this.$repositories.products.show(this.$route.params.id)
-    this.recommendations = await this.$repositories.products.groupByCategory(this.product.category, 5)
   }
 }
 </script>

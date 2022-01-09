@@ -15,6 +15,12 @@
         .title.skeleton-loader
 </template>
 
+<script>
+export default {
+  name: 'SkeletonLoaderRecommendations'
+}
+</script>
+
 <style lang="sass" scoped>
 .recommendations
   width: 268px

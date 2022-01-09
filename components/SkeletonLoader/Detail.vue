@@ -11,6 +11,12 @@
       .recommendations
 </template>
 
+<script>
+export default {
+  name: 'SkeletonLoaderDetail'
+}
+</script>
+
 <style lang="sass" scoped>
 .product
   padding: 10px

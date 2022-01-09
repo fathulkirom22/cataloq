@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    skeleton-loader-index(v-if="$fetchState.pending")
+    skeleton-loader(v-if="$fetchState.pending")
     error-fetch(v-else-if="$fetchState.error")
     .grid(v-else)
       .grid-item(v-for="product in products")

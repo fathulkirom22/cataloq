@@ -34,6 +34,12 @@
         .rating.skeleton-loader
 </template>
 
+<script>
+export default {
+  name: 'SkeletonLoader'
+}
+</script>
+
 <style lang="sass" scoped>
 .grid
   display: grid
