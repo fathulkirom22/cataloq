@@ -1,27 +1,23 @@
 <template lang="pug">
-  .product(v-if="product")
-    .flex.justify-content-between
-      .product-img
-        .outer-img
-          .inner-img
-            img(:src="product.image")
-      .product-detail
-        .flex.justify-content-between
-          .stars-container
-            .stars(:style="`--rating: ${product.rating.rate};`")
-            .stars-value {{product.rating.rate}} ({{product.rating.count}} review)
-          .price $ {{product.price}}
-        .title.mb-2 {{product.title}}
-        .category.mb-2 {{product.category}}
-        .description.mb-2 {{product.description}}
-      .recommendations
-        .title.mb-2 Recommendations
-        .recommendation-item.mb-2(v-for="recommendation in recommendations")
-          .flex.align-items-center
-            .outer-img.mr-1
-              .inner-img
-                img(:src="recommendation.image")
-            nuxt-link.title(:to="`/products/${recommendation.id}`") {{recommendation.title}}
+  div
+    skeleton-loader-detail(v-if="$fetchState.pending")
+    error-fetch(v-else-if="$fetchState.error")
+    .product(v-else)
+      .flex.justify-content-between
+        .product-img
+          .outer-img
+            .inner-img
+              img(:src="product.image")
+        .product-detail
+          .flex.justify-content-between
+            .stars-container
+              .stars(:style="`--rating: ${product.rating.rate};`")
+              .stars-value {{product.rating.rate}} ({{product.rating.count}} review)
+            .price $ {{product.price}}
+          .title.mb-2 {{product.title}}
+          .category.mb-2 {{product.category}}
+          .description.mb-2 {{product.description}}
+        product-recommendation(:category="product.category")
 </template>
 
 <script>
@@ -59,27 +55,6 @@ export default {
           max-height: 348px
   .product-detail
     width: 468px
-    .stars-container
-      display: flex
-      align-items: center
-      .stars
-        --percent: calc(var(--rating) / 5 * 100%)
-        display: inline-block
-        font-size: var(--star-size)
-        line-height: 1
-        &::before
-          content: '★★★★★'
-          letter-spacing: 3px
-          background: linear-gradient(90deg, var(--star-background) var(--percent), var(--star-color) var(--percent))
-          -webkit-background-clip: text
-          -webkit-text-fill-color: transparent
-      .stars-value
-        margin-left: 10px
-        font-weight: 500
-        font-size: 18px
-        line-height: 22px
-        letter-spacing: 0.1px
-        color: #5E6366
     .price
       font-weight: bold
       font-size: 34px
@@ -107,21 +82,4 @@ export default {
       line-height: 143%
       letter-spacing: 0.018em
       color: #787885
-  .recommendations
-    width: 268px
-    .recommendation-item
-      .outer-img
-        display: flex
-        align-items: center
-        width: 48px
-        height: 48px
-        .inner-img
-          display: flex
-          justify-content: center
-          width: 48px
-          img
-            width: auto
-            height: auto
-            max-width: 48px
-            max-height: 48px
 </style>

@@ -1,7 +1,7 @@
 <template lang="pug">
   div
-    Navbar.sticky-top.mb-4
-    Nuxt.container
+    navbar.sticky-top.mb-4
+    nuxt(keep-alive :keep-alive-props="{ max: 10 }").container
 </template>
 
 <script>

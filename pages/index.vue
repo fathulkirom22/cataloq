@@ -1,7 +1,10 @@
 <template lang="pug">
-  .grid
-    .grid-item(v-for="product in products")
-      ecommerce-item(:product="product")
+  div
+    skeleton-loader-index(v-if="$fetchState.pending")
+    error-fetch(v-else-if="$fetchState.error")
+    .grid(v-else)
+      .grid-item(v-for="product in products")
+        ecommerce-item(:product="product")
 </template>
 
 <script>

@@ -70,25 +70,4 @@ export default {
     display: -webkit-box
     -webkit-line-clamp: 2
     -webkit-box-orient: vertical
-  .stars-container
-    display: flex
-    align-items: center
-    .stars
-      --percent: calc(var(--rating) / 5 * 100%)
-      display: inline-block
-      font-size: var(--star-size)
-      line-height: 1
-      &::before
-        content: '★★★★★'
-        letter-spacing: 3px
-        background: linear-gradient(90deg, var(--star-background) var(--percent), var(--star-color) var(--percent))
-        -webkit-background-clip: text
-        -webkit-text-fill-color: transparent
-    .stars-value
-      margin-left: 10px
-      font-weight: 500
-      font-size: 18px
-      line-height: 22px
-      letter-spacing: 0.1px
-      color: #5E6366
 </style>
