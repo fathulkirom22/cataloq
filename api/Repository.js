@@ -7,5 +7,8 @@ export default $axios => resource => ({
   },
   groupByCategory(category, limit = null) {
     return $axios.$get(`/${resource}/category/${category}?limit=${limit}`)
+  },
+  getAllCategories() {
+    return $axios.get(`/${resource}/categories`)
   }
 })

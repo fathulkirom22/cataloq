@@ -12,7 +12,7 @@ export default {
     products: []
   }),
   async fetch() {
-    this.products = await this.$repositories.products.index()
+    this.products = await this.$repositories.products.groupByCategory(this.$route.params.category)
   }
 }
 </script>
