@@ -26,25 +26,23 @@ export default {
 
 <style lang='sass' scoped>
 .product
-  padding: 10px
-  width: 258px
+  padding: 15px
   background: #fff
   .outer-img
     display: flex
     align-items: center
-    width: 258px
+    width: 100%
     height: 258px
     .inner-img
       display: flex
       justify-content: center
-      width: 258px
+      width: 100%
       img
         width: auto
         height: auto
         max-width: 258px
         max-height: 258px
   .title
-    height: 48px
     font-weight: normal
     font-size: 16px
     line-height: 150%
@@ -70,4 +68,8 @@ export default {
     display: -webkit-box
     -webkit-line-clamp: 2
     -webkit-box-orient: vertical
+@media (min-width: 768px)
+  .product
+    .title
+      height: 48px
 </style>

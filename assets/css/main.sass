@@ -2,6 +2,8 @@
 
 body
   background-color: var(--main-bg-color)
+  font-family: 'Comic Neue'
+  font-style: normal
   .layout-enter-active,
   .layout-leave-active
     transition: opacity .5s
@@ -18,7 +20,7 @@ body
     background-color: var(--main-color)
     color:  var(--text-main-color)
   .logo
-    background: #ee757f
+    background: var(--logo-color)
     padding: 3px 10px
     border-radius: 5px
     font-weight: 500
@@ -27,8 +29,7 @@ body
     &::before
       content: 'C'
   .container
-    max-width: 1188px
-    min-width: 1188px
+    width: 100%
     margin: auto
     padding: 19px 0px 0px
   .flex
@@ -85,3 +86,14 @@ body
   @keyframes shine
     to
       background-position: 100% 0, /* move highlight to right */ 0 0
+  @media (min-width: 768px)
+    .container
+      max-width: 740px
+    .md-flex
+      display: flex
+  @media (min-width: 1200px)
+    .container
+      max-width: 1188px
+    .xl-flex
+      display: flex
+    

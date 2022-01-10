@@ -33,7 +33,9 @@ export default {
 
 <style lang='sass' scoped>
 .recommendations
-  width: 268px
+  .title
+    font-weight: bold
+    font-size: 16px
   .recommendation-item
     .outer-img
       display: flex
@@ -49,4 +51,7 @@ export default {
           height: auto
           max-width: 48px
           max-height: 48px
+@media (min-width: 768px)
+  .recommendations
+    width: 268px
 </style>
