@@ -1,10 +1,16 @@
 <template lang="pug">
   .navbar.main-palette.md-flex.align-items-center.justify-content-between(ref="nav")
-    nuxt-link.title(to='/')
-      span.logo.mr-2
-      span Cataloq
+    .flex.align-items-center.justify-content-between
+      nuxt-link.title(to='/')
+        span.logo.mr-2
+        span Cataloq
+      div
+        nuxt-link.my-favorite.md-none(to='/my-favorite') My favorite
+          .badge(v-if="badge") {{badge}}
     .menu-container.flex
-      nuxt-link.menu(v-for="category in categories.data" :to='`/${category}`') {{category}}
+      nuxt-link.menu(v-for="category in categories.data" :to='`/${category}`' :key="category.id") {{category}}
+    nuxt-link.my-favorite.sm-none(to='/my-favorite') My favorite
+      .badge(v-if="badge") {{badge}}
 </template>
 
 <script>
@@ -16,6 +22,11 @@ export default {
   async fetch() {
     this.categories = await this.$repositories.products.getAllCategories()
   },
+  computed: {
+    badge() {
+      return this.$store.getters['myfavorite/lengthFavorite']
+    }
+  },
   mounted() {
     let prevScrollpos = window.pageYOffset
     window.onscroll = function () {
@@ -23,7 +34,7 @@ export default {
       if (prevScrollpos > currentScrollPos) {
         this.$refs.nav.style.top = '0'
       } else {
-        this.$refs.nav.style.top = '-120px'
+        this.$refs.nav.style.top = '-140px'
       }
       prevScrollpos = currentScrollPos
     }.bind(this)
@@ -38,7 +49,6 @@ export default {
   padding-top: 20px
   .nuxt-link-exact-active
     font-weight: bold
-    background-color: var(--active-link-color)
     color: var(--active-text-link-color) !important
   .title
     margin: 10px
@@ -50,7 +60,7 @@ export default {
     line-height: 36px
   .menu-container
     padding-top: 20px
-    padding-bottom: 20px
+    padding-bottom: 10px
     overflow-x: visible
     overflow-y: hidden
     white-space: nowrap
@@ -64,10 +74,34 @@ export default {
         margin-left: .75rem !important
       &:last-child
         margin-right: .75rem !important
+  .my-favorite
+    position: relative
+    margin-right: .75rem
+    background-color: var(--btn-my-favorite)
+    border-radius: 4px
+    padding: 5px 10px
+    color: var(--text-main-color) !important
+    text-decoration: none
+    .badge
+      position: absolute
+      top: -5px
+      right: -5px
+      background-color: var(--badge-bg-color)
+      border-radius: 100%
+      font-size: 12px
+      font-weight: bold
+      width: 15px
+      height: 15px
+      display: flex
+      justify-content: center
+      align-items: center
+      text-align: center
 @media (min-width: 768px)
   .navbar
     padding-top: 0
     .menu-container
+      padding-top: 0
+      padding-bottom: 0
       overflow-x: hidden
       overflow-y: hidden
 </style>

@@ -1,6 +1,6 @@
 <template lang="pug">
   .grid(v-else)
-    .grid-item(v-for="product in products")
+    .grid-item(v-for="product in products" :key="product.id")
       ecommerce-item(:product="product")
 </template>
 

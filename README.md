@@ -1,5 +1,11 @@
 # catalog
 
+## About
+
+Catalog website created using `Nuxt.js` framework.
+mockup api : https://fakestoreapi.com
+live demo : http://cataloq.vercel.app
+
 ## Build Setup
 
 ```bash

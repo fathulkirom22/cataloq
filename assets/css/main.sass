@@ -38,6 +38,10 @@ body
     justify-content: space-between
   .align-items-center
     align-items: center
+  .sm-none
+    display: none
+  .md-none
+    display: block
   .m-3
     margin: 0 .75rem
   .m-1
@@ -91,6 +95,10 @@ body
     to
       background-position: 100% 0, /* move highlight to right */ 0 0
   @media (min-width: 768px)
+    .md-none
+      display: none
+    .sm-none
+      display: block
     .container
       max-width: 740px
     .md-flex

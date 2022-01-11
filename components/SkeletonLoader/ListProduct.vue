@@ -36,7 +36,7 @@
 
 <script>
 export default {
-  name: 'SkeletonLoader'
+  name: 'SkeletonLoaderListProduct'
 }
 </script>
 

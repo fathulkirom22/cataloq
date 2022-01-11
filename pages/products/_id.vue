@@ -18,7 +18,10 @@
               .price $ {{product.price}}
             .title.mb-2 {{product.title}}
             .category.mb-2 {{product.category}}
-            .description.mb-2 {{product.description}}
+            .description.mb-4 {{product.description}}
+            div
+              .btn-my-favorite(v-if="isInFavorite" @click="removeMyFavorite") Remove From Favorite
+              .btn-my-favorite(v-else @click="addMyFavorite") Add To Favorite
         product-recommendation(:category="product.category")
 </template>
 
@@ -30,6 +33,19 @@ export default {
   }),
   async fetch() {
     this.product = await this.$repositories.products.show(this.$route.params.id)
+  },
+  computed: {
+    isInFavorite() {
+      return this.$store.getters['myfavorite/isInFavorite'](this.$route.params.id)
+    }
+  },
+  methods: {
+    addMyFavorite() {
+      this.$store.commit('myfavorite/add', this.product)
+    },
+    removeMyFavorite() {
+      this.$store.commit('myfavorite/remove', this.product)
+    }
   }
 }
 </script>
@@ -82,6 +98,14 @@ export default {
         line-height: 143%
         letter-spacing: 0.018em
         color: #787885
+      .btn-my-favorite
+        cursor: pointer
+        padding: 10px 20px
+        background: #EBF2FF
+        border-radius: 4px
+        width: fit-content
+        color: #2264D1
+        font-weight: bold
 @media (min-width: 768px)
   .product
     .main-content
