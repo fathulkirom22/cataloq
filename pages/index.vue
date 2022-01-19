@@ -13,7 +13,8 @@ export default {
   }),
   async fetch() {
     this.products = await this.$repositories.products.index()
-  }
+  },
+  fetchOnServer: false
 }
 </script>
 

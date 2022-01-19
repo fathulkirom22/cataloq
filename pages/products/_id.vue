@@ -34,6 +34,7 @@ export default {
   async fetch() {
     this.product = await this.$repositories.products.show(this.$route.params.id)
   },
+  fetchOnServer: false,
   computed: {
     isInFavorite() {
       return this.$store.getters['myfavorite/isInFavorite'](this.$route.params.id)

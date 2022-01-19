@@ -22,6 +22,7 @@ export default {
   async fetch() {
     this.categories = await this.$repositories.products.getAllCategories()
   },
+  fetchOnServer: false,
   computed: {
     badge() {
       return this.$store.getters['myfavorite/lengthFavorite']

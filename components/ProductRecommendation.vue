@@ -27,7 +27,8 @@ export default {
   }),
   async fetch() {
     this.recommendations = await this.$repositories.products.groupByCategory(this.category, 5)
-  }
+  },
+  fetchOnServer: false
 }
 </script>
 
