@@ -1,14 +1,16 @@
 <template lang='pug'>
-  .product
-    .outer-img
-      .inner-img
-        img(:src="product.image")
-    nuxt-link.title(:to="`/products/${product.id}`") {{product.title}}
-    .price $ {{product.price}}
-    .description {{product.description}}
-    .stars-container
-      .stars(:style="`--rating: ${product.rating.rate};`")
-      .stars-value {{product.rating.rate}}
+  nuxt-link.product-link(:to="`/products/${product.id}`")
+    .product
+      .outer-img.mb-1
+        .inner-img
+          img(:src="product.image")
+      .title {{product.title}}
+      .flex.justify-content-between
+        .price $ {{product.price}}
+        .stars-container
+          .stars(:style="`--rating: ${product.rating.rate};`")
+          .stars-value {{product.rating.rate}}
+      .description {{product.description}}
 </template>
 
 <script>
@@ -25,9 +27,14 @@ export default {
 </script>
 
 <style lang='sass' scoped>
+.product-link
+  text-decoration: none !important
 .product
+  border-radius: 8px
+  filter: drop-shadow(0 0 2px rgba(229,233,246,.4))
   padding: 15px
   background: #fff
+  border: 1px solid #edf1f7 !important
   .outer-img
     display: flex
     align-items: center
@@ -40,7 +47,7 @@ export default {
       img
         width: auto
         height: auto
-        max-width: 258px
+        max-width: 220px
         max-height: 258px
   .title
     font-weight: normal

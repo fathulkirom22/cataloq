@@ -1,16 +1,17 @@
 <template lang="pug">
-  .navbar.main-palette.md-flex.align-items-center.justify-content-between(ref="nav")
-    .flex.align-items-center.justify-content-between
-      nuxt-link.title(to='/')
-        span.logo.mr-2
-        span Cataloq
-      div
-        nuxt-link.my-favorite.md-none(to='/my-favorite') My favorite
-          .badge(v-if="badge") {{badge}}
-    .menu-container.flex
-      nuxt-link.menu(v-for="category in categories.data" :to='`/${category}`' :key="category.id") {{category}}
-    nuxt-link.my-favorite.sm-none(to='/my-favorite') My favorite
-      .badge(v-if="badge") {{badge}}
+  .navbar.main-palette(ref="nav")
+    .container.md-flex.align-items-center.justify-content-between.p-0
+      .flex.align-items-center.justify-content-between
+        nuxt-link.title(to='/')
+          span.logo.mr-2
+          span CalatlogQ
+        div
+          nuxt-link.my-favorite.md-none(to='/my-favorite') Favorite
+            .badge(v-if="badge") {{badge}}
+      .menu-container.flex
+        nuxt-link.menu(v-for="category in categories.data" :to='`/${category}`' :key="category.id") {{category}}
+      nuxt-link.my-favorite.sm-none(to='/my-favorite') Favorite
+        .badge(v-if="badge") {{badge}}
 </template>
 
 <script>

@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    p(v-if="products.length === 0") No have favorite
+    no-data(v-if="!products.length")
     list-product(v-else :products="products")
 </template>
 

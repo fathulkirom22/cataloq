@@ -20,13 +20,19 @@ export default {
       type: String,
       require: true,
       default: 'jewelery'
+    },
+    byProductId: {
+      type: [String, Number],
+      require: true,
+      default: 0
     }
   },
   data: () => ({
     recommendations: []
   }),
   async fetch() {
-    this.recommendations = await this.$repositories.products.groupByCategory(this.category, 5)
+    const res = await this.$repositories.products.groupByCategory(this.category, 5)
+    this.recommendations = res.filter(item => parseInt(item.id) !== parseInt(this.byProductId))
   }
 }
 </script>
@@ -42,6 +48,8 @@ export default {
       align-items: center
       width: 48px
       height: 48px
+      background-color: #fff
+      border-radius: 5px
       .inner-img
         display: flex
         justify-content: center

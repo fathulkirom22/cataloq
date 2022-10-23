@@ -20,9 +20,9 @@
             .category.mb-2 {{product.category}}
             .description.mb-4 {{product.description}}
             div
-              .btn-my-favorite(v-if="isInFavorite" @click="removeMyFavorite") Remove From Favorite
+              .btn-my-favorite.text-danger(v-if="isInFavorite" @click="removeMyFavorite") Remove From Favorite
               .btn-my-favorite(v-else @click="addMyFavorite") Add To Favorite
-        product-recommendation(:category="product.category")
+        product-recommendation(:category="product.category" :by-product-id="this.$route.params.id")
 </template>
 
 <script>
@@ -61,6 +61,8 @@ export default {
         display: flex
         align-items: center
         height: 348px
+        background-color: #fff
+        border-radius: 10px
         .inner-img
           display: flex
           justify-content: center
@@ -68,7 +70,7 @@ export default {
           img
             width: auto
             height: auto
-            max-width: 348px
+            max-width: 330px
             max-height: 348px
     .product-detail
       .price

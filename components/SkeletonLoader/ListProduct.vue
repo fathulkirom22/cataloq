@@ -4,34 +4,38 @@
       .product
         .product-img.skeleton-loader.mb-2
         .title.skeleton-loader.mb-2
-        .price.skeleton-loader.mb-2
+        .flex.justify-content-between
+          .price.skeleton-loader.mb-2
+          .rating.skeleton-loader
         .description.skeleton-loader.mb-2
         .description.skeleton-loader.mb-2
-        .rating.skeleton-loader
     .grid-item
       .product
         .product-img.skeleton-loader.mb-2
         .title.skeleton-loader.mb-2
-        .price.skeleton-loader.mb-2
+        .flex.justify-content-between
+          .price.skeleton-loader.mb-2
+          .rating.skeleton-loader
         .description.skeleton-loader.mb-2
         .description.skeleton-loader.mb-2
-        .rating.skeleton-loader
     .grid-item
       .product
         .product-img.skeleton-loader.mb-2
         .title.skeleton-loader.mb-2
-        .price.skeleton-loader.mb-2
+        .flex.justify-content-between
+          .price.skeleton-loader.mb-2
+          .rating.skeleton-loader
         .description.skeleton-loader.mb-2
         .description.skeleton-loader.mb-2
-        .rating.skeleton-loader
     .grid-item
       .product
         .product-img.skeleton-loader.mb-2
         .title.skeleton-loader.mb-2
-        .price.skeleton-loader.mb-2
+        .flex.justify-content-between
+          .price.skeleton-loader.mb-2
+          .rating.skeleton-loader
         .description.skeleton-loader.mb-2
         .description.skeleton-loader.mb-2
-        .rating.skeleton-loader
 </template>
 
 <script>
@@ -66,8 +70,8 @@ export default {
         width: 100%
         height: 18px
       .rating
-        width: 150px
-        height: 18px
+        width: 120px
+        height: 24px
 @media (min-width: 768px)
   .grid
     grid-template-columns: repeat(2, 1fr)
