@@ -36,6 +36,42 @@
           .rating.skeleton-loader
         .description.skeleton-loader.mb-2
         .description.skeleton-loader.mb-2
+    .grid-item
+      .product
+        .product-img.skeleton-loader.mb-2
+        .title.skeleton-loader.mb-2
+        .flex.justify-content-between
+          .price.skeleton-loader.mb-2
+          .rating.skeleton-loader
+        .description.skeleton-loader.mb-2
+        .description.skeleton-loader.mb-2
+    .grid-item
+      .product
+        .product-img.skeleton-loader.mb-2
+        .title.skeleton-loader.mb-2
+        .flex.justify-content-between
+          .price.skeleton-loader.mb-2
+          .rating.skeleton-loader
+        .description.skeleton-loader.mb-2
+        .description.skeleton-loader.mb-2
+    .grid-item
+      .product
+        .product-img.skeleton-loader.mb-2
+        .title.skeleton-loader.mb-2
+        .flex.justify-content-between
+          .price.skeleton-loader.mb-2
+          .rating.skeleton-loader
+        .description.skeleton-loader.mb-2
+        .description.skeleton-loader.mb-2
+    .grid-item
+      .product
+        .product-img.skeleton-loader.mb-2
+        .title.skeleton-loader.mb-2
+        .flex.justify-content-between
+          .price.skeleton-loader.mb-2
+          .rating.skeleton-loader
+        .description.skeleton-loader.mb-2
+        .description.skeleton-loader.mb-2
 </template>
 
 <script>
@@ -47,7 +83,7 @@ export default {
 <style lang="sass" scoped>
 .grid
   display: grid
-  grid-gap: 20px
+  grid-gap: 15px
   grid-template-columns: repeat(1, 1fr)
   justify-items: center
   .grid-item
